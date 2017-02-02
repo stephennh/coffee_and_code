@@ -10,12 +10,16 @@ def luck_check(str)
     front << x if index < array.length/2.0
     back << x if index >= array.length/2.0
   }
-  if front.inject(:+) == back.inject(:+)
-    true
-  else
-    false
-  end
+  return front.inject(:+) == back.inject(:+)
 end
+
+puts luck_check('') #False
+puts luck_check('23a09') #False
+puts luck_check('2134') #False
+puts luck_check('003111') #True
+puts luck_check('813372') #True
+puts luck_check('1111') #True
+
 
 # regular expression ==   str =~ //
 # compare input to some sortoff pattern
