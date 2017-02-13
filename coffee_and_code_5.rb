@@ -26,9 +26,11 @@ end
 
 def find_leap_years(x, y)
   years = (x..y)
-  years.each do |z|
-    if (z % 4 == 0) && !(z % 100 == 0) && !(z % 400 == 0)
-      puts z
+  years.each do |year|
+    if year % 400 == 0
+      year
+    elsif year % 100 != 0 && year % 4 == 0
+      year
     end
   end
 end
